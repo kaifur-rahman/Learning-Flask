@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Dynamic Value passed</h1>
+    {% for val in values %} {% if val=="check"%}
+    <p>{{val | reverseString}}</p>
+    {% else %}
+    <p>{{val}}</p>
+    {% endif %} {% endfor %}
+  </body>
+</html>

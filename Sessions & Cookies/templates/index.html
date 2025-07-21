@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--just use like we are in static folder already since we mentioned this path in flask app-->
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1 class="heading">Index HTML rendered</h1>
+    <img src="/assets/image.jpg" alt="python flask logo" />
+    <br />
+    <a href="{{url_for('setSession')}}">Set Session</a>
+    <a href="{{url_for('getSession')}}">Get Session</a>
+    <a href="{{url_for('clearSession')}}">Clear Session</a>
+    <br />
+    <a href="{{url_for('setCookies')}}">Set Cookie</a>
+    <a href="{{url_for('getCookies')}}">Get Cookie</a>
+    <a href="{{url_for('clearCookies')}}">Delete Cookie</a>
+    <h3>{{message}}</h3>
+  </body>
+</html>

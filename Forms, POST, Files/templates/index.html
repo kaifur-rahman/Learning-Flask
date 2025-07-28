@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Index Page{% endblock %} {% block
+content %}
+<h1>Hello World</h1>
+<form method="POST" action="{{url_for('home')}}">
+  <input type="text" name="username" placeholder="Username" /><br />
+  <input type="password" name="password" placeholder="Password" /><br />
+  <input type="submit" value="Login" />
+</form>
+<br />
+<br />
+<form
+  method="POST"
+  action="{{url_for('fileUpload')}}"
+  enctype="multipart/form-data"
+>
+  <input type="file" name="file" />
+  <input type="submit" value="Upload" />
+</form>
+
+<h1>Javascript JSON Request</h1>
+<button id="post_btn">Send POST Request</button>
+
+<script type="text/Javascript">
+  const postBtn=document.getElementById('post_btn');
+  const jsonData={name:"Mike",greeting:'Hello'}
+
+  postBtn.addEventListener('click',()=>{
+      fetch('{{url_for("handlingJson")}}',{
+          method:'POST',
+          headers:{
+              'Content-Type':'application/json;charset=utf-8'
+          },
+          body:JSON.stringify(jsonData)
+      })
+  })
+</script>
+{% endblock %}
